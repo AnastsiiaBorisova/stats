@@ -15,6 +15,7 @@ export class Summary {
     return new Summary(new WinsAnalysis(team), new HtmlReport)
   }
   constructor(public analyzer: Analyzer, public outputTarget: OutputTarget) {}
+  
   buildAndPrintReport(matches: MatchData[]): void {
     const output = this.analyzer.run(matches);
     this.outputTarget.print(output);
